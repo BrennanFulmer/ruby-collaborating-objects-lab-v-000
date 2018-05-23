@@ -13,13 +13,15 @@ class Artist
     @@all
   end
   
+  def save
+    self.class.all << self
+  end
+  
   def add_song(song)
     self.songs << song
   end
   
-  def save
-    self.class.all << self
-  end
+
   
   def self.find_or_create_by_name(name)
     self.all.detect { |musician| musician.name == name} || Artist.new(name)
