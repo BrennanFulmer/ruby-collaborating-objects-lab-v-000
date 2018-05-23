@@ -7,7 +7,7 @@ class MP3Importer
   end
   
   def files
-    # .delete_prefix("./db/mp3s/") - is better than .sub but I'm not risking updating from 2.3.1 to 2.5.x in the browser IDE
+    # .delete_prefix("#{self.path}/") - is better than .sub but I'm not risking updating from 2.3.1 to 2.5.x in the browser IDE
     @files ||= Dir.glob("#{self.path}/*.mp3").collect{ |filename| filename.sub("#{self.path}/", '') }
   end
 
