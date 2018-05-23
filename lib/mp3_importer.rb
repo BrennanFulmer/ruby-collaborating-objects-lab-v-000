@@ -8,7 +8,7 @@ class MP3Importer
   
   def files
     # "./db/mp3s/*.mp3" - path for all files
-    results = Dir.glob("#{self.path}/*.mp3")
+    results = 
 
     # .delete_prefix("./db/mp3s/") - better way but I'm not risking updating from 2.3.1 to 2.5.x in the browser IDE
     @files ||= results.collect{ |filename| filename.sub("#{self.path}/", '') }
