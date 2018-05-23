@@ -11,7 +11,7 @@ class MP3Importer
     results = Dir.glob("#{self.path}/*.mp3")
 
     # .delete_prefix("./db/mp3s/") - better way but I'm not risking updating from 2.3.1 to 2.5.x in the browser IDE
-    @files = results.collect{ |filename| filename.sub('./spec/fixtures/mp3s/', '') }
+    @files = results.collect{ |filename| filename.sub("#{self.path}/", '') }
   end
 
   def import
